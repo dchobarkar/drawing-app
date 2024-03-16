@@ -1,5 +1,16 @@
+import { useOnDraw } from "./Hooks";
+
 const Canvas = ({ width, height }) => {
-  return <canvas width={width} height={height} style={canvasStyle} />;
+  const setCanvasRef = useOnDraw();
+
+  return (
+    <canvas
+      width={width}
+      height={height}
+      style={canvasStyle}
+      ref={setCanvasRef}
+    />
+  );
 };
 
 export default Canvas;
