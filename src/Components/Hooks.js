@@ -7,6 +7,14 @@ export function useOnDraw() {
     if (!ref) return;
 
     canvasRef.current = ref;
+    initMouseMoveListener();
+  }
+
+  function initMouseMoveListener() {
+    const mouseMoveListener = (e) => {
+      console.log({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", mouseMoveListener);
   }
 
   return setCanvasRef;
