@@ -1,7 +1,9 @@
 import { useOnDraw } from "./Hooks";
 
 const Canvas = ({ width, height }) => {
-  const setCanvasRef = useOnDraw();
+  const setCanvasRef = useOnDraw(onDraw);
+
+  function onDraw(ctx, point) {}
 
   return (
     <canvas
